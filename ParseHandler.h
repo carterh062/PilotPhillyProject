@@ -15,5 +15,7 @@
 
 -(id)init;
 -(void)startParse;
--(void)testPushObj:(NSString*)obj key:(NSString *)key;
+-(void)testPushObj:(NSString*)obj
+               key:(NSString *)key;
+-(void)pushLocationX:(int)xVal Y:(int)yVal Z:(int)zVal;
 @end
