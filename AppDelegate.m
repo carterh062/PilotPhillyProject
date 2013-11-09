@@ -7,18 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "Parse/Parse.h"
-
+#import "ParseHandler.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [Parse setApplicationId:@"6KV47V402GepngG99hurbbp2IlVnfohb9xQ8jHdd"
-                  clientKey:@"AM04FHwEoQIkjYWx4bW5aX7YbR6KhLTF2LvAqCUL"];
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    [testObject setObject:@"bar" forKey:@"foo"];
-    [testObject save];
+    ParseHandler *parseHandle = [[ParseHandler alloc]init];
+    [parseHandle startParse];
+    [parseHandle testPushObj:@"some" key:@"bar"];
+    
     return YES;
 }
 
