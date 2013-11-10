@@ -7,7 +7,7 @@
 //
 
 #import "LocationListViewController.h"
-
+#import "ParseHandler.h"
 @interface LocationListViewController ()
 
 @end
@@ -20,15 +20,21 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     
-    self.locationList = [[NSMutableArray alloc] initWithObjects: @"Hello", @"Hola",@"Bonjour", nil];
-
+    [super viewDidLoad];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    ParseHandler *parseH = [[ParseHandler alloc]init];
+    [parseH startParse];
+    self.locationList = [parseH returnLocations:^{
+        [self.tableView reloadData];
+    }];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
