@@ -96,15 +96,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="tQQ-GG-US5">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="tQQ-GG-US5">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tQQ-GG-US5" id="iVM-qk-bet">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="IFX-Fy-osU" kind="push" identifier="cellToDetailLocation" id="H5P-KN-nuz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hpc-HF-D8x" id="XJl-Vi-W2p"/>
+                            <outlet property="delegate" destination="Hpc-HF-D8x" id="auR-nU-bUy"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Scz-Ra-ePh"/>
                 </tableViewController>
@@ -190,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="-129" y="478"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed Location View Controller-->
         <scene sceneID="LTn-OT-sN4">
             <objects>
-                <viewController id="IFX-Fy-osU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailLocationVC" id="IFX-Fy-osU" customClass="DetailedLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eql-2O-HNm"/>
                         <viewControllerLayoutGuide type="bottom" id="8Bs-cM-ltx"/>
@@ -216,6 +223,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sj0-hp-8Bp"/>
+                    <connections>
+                        <outlet property="testLabel" destination="06H-6w-XJa" id="yTg-3H-mhT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mx-Be-ciy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

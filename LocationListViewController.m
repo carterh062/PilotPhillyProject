@@ -8,6 +8,8 @@
 
 #import "LocationListViewController.h"
 #import "ParseHandler.h"
+#import "DetailedLocationViewController.h"
+
 @interface LocationListViewController ()
 
 @end
@@ -65,6 +67,14 @@
     return _locationList.count;
 }
 
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
+    DetailedLocationViewController * detail = [storyboard instantiateViewControllerWithIdentifier:@"DetailLocationVC"];
+    detail.cellClicked = indexPath.row;
+    [self.navigationController pushViewController:detail animated:YES];
+    NSLog(@"touch on row %d", indexPath.row);
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = @"Cell";
@@ -108,6 +118,8 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 } */
+
+
 
 
 
