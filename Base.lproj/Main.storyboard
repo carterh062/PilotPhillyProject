@@ -138,11 +138,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ED-kg-tfY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where are you?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ED-kg-tfY">
                                 <rect key="frame" x="137" y="83" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="finishedTitleEditing:" destination="ay0-AJ-yI4" eventType="editingDidEnd" id="g8X-D9-zHn"/>
+                                    <action selector="titleReturnPressed:" destination="ay0-AJ-yI4" eventType="editingDidEndOnExit" id="vng-69-U0o"/>
+                                    <outlet property="delegate" destination="ay0-AJ-yI4" id="48t-hW-TO1"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnJ-FH-WlR">
                                 <rect key="frame" x="137" y="179" width="46" height="24"/>
@@ -155,6 +160,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="finishedNotesEditing:" destination="ay0-AJ-yI4" eventType="editingDidEnd" id="UEP-nC-elR"/>
+                                    <action selector="notesReturnPressed:" destination="ay0-AJ-yI4" eventType="editingDidEndOnExit" id="1o3-gj-Rz1"/>
+                                    <outlet property="delegate" destination="ay0-AJ-yI4" id="dnK-50-Tju"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1R-jz-ugp">
                                 <rect key="frame" x="135" y="330" width="51" height="40"/>
@@ -163,11 +173,18 @@
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="ay0-AJ-yI4" eventType="touchUpInside" id="TJv-V3-M5e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qig-h5-bdn"/>
+                    <connections>
+                        <outlet property="notesTextField" destination="p7o-g8-FG2" id="UHZ-e3-u8W"/>
+                        <outlet property="titleTextField" destination="8ED-kg-tfY" id="SzH-7L-ddU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5o-JL-FWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

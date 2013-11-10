@@ -9,6 +9,8 @@
 #import "InfoViewController.h"
 
 @interface InfoViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *notesTextField;
+@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 
 @end
 
@@ -27,6 +29,26 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+- (IBAction)titleReturnPressed:(id)sender {
+    [self.titleTextField resignFirstResponder];
+}
+- (IBAction)notesReturnPressed:(id)sender {
+    [self.notesTextField resignFirstResponder];
+}
+- (IBAction)finishedTitleEditing:(id)sender {
+    NSString *titleText = self.titleTextField.text;
+    
+    NSLog(@"%@", titleText);
+    
+}
+- (IBAction)finishedNotesEditing:(id)sender {
+    NSString *notesText = self.notesTextField.text;
+    
+    NSLog(@"%@", notesText);
+}
+
+- (IBAction)saveButtonClicked:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning
