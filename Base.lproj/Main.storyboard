@@ -49,16 +49,20 @@
                                             </connections>
                                         </button>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" id="cfW-Pb-dkf">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="gFI-VI-dwC">
-                                            <rect key="frame" x="205" y="6" width="88" height="33"/>
+                                    <barButtonItem style="plain" id="H5y-CS-VoC">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ney-PF-vf2">
+                                            <rect key="frame" x="205" y="7" width="92" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Add Location">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="addLocationButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="agf-Es-cb1"/>
+                                                <segue destination="ay0-AJ-yI4" kind="push" id="k4j-jW-7jV"/>
+                                            </connections>
                                         </button>
                                         <connections>
-                                            <action selector="addLocationButtonClicked:" destination="vXZ-lx-hvc" id="kxy-y2-S7Y"/>
+                                            <action selector="addLocationButtonPressed:" destination="vXZ-lx-hvc" id="J3h-pn-IDm"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -76,7 +80,7 @@
                     <navigationItem key="navigationItem" id="4qv-Cr-lZu"/>
                     <connections>
                         <outlet property="mapView" destination="Pru-96-gL8" id="UKU-ga-lb0"/>
-                        <segue destination="ay0-AJ-yI4" kind="push" id="xRn-nC-RZm"/>
+                        <segue destination="Hpc-HF-D8x" kind="push" id="58q-MZ-xL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -119,31 +123,31 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slf-oq-piS">
-                                <rect key="frame" x="51" y="58" width="77" height="30"/>
+                                <rect key="frame" x="52" y="83" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ED-kg-tfY">
-                                <rect key="frame" x="137" y="58" width="120" height="30"/>
+                                <rect key="frame" x="137" y="83" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnJ-FH-WlR">
-                                <rect key="frame" x="137" y="144" width="46" height="21"/>
+                                <rect key="frame" x="137" y="179" width="46" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-g8-FG2">
-                                <rect key="frame" x="64" y="179" width="193" height="30"/>
+                                <rect key="frame" x="64" y="211" width="193" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1R-jz-ugp">
-                                <rect key="frame" x="135" y="294" width="51" height="40"/>
+                                <rect key="frame" x="135" y="330" width="51" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Save">

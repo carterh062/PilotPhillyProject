@@ -14,6 +14,6 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 - (IBAction)recentLocationsButtonClicked:(id)sender;
-- (IBAction)addLocationButtonClicked:(id)sender;
+- (IBAction)addLocationButtonPressed:(id)sender;
 
 @end

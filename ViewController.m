@@ -25,11 +25,13 @@
         NSLog(@"View Controller Loaded!");
 	// Do any additional setup after loading the view, typically from a nib.
 }
-- (IBAction)addLocationButtonClicked:(id)sender {
-    InfoViewController *inforamtionViewController = [[InfoViewController alloc] init];
-    [self.navigationController pushViewController:inforamtionViewController animated:YES];
+
+- (IBAction)addLocationButtonPressed:(id)sender
+{
+//    InfoViewController *inforamtionViewController = [[InfoViewController alloc] init];
+//    [self.navigationController pushViewController:inforamtionViewController animated:YES];
     
-    
+    NSLog(@"test");
 }
 
 - (IBAction)recentLocationsButtonClicked:(id)sender {
@@ -38,9 +40,11 @@
     
     _mapData.latitude = [self.mapView userLocation].location.coordinate.latitude;
     _mapData.longitude = [self.mapView userLocation].location.coordinate.longitude;
-//    ParseHandler *parseH = [[ParseHandler alloc]init];
-//    [parseH startParse];
-//    [parseH pushLocationLatitude:_mapData.latitude longitude:_mapData.longitude title:@"String title" currAddress:@"Something"];
+    
+    ParseHandler *parseH = [[ParseHandler alloc]init];
+    [parseH startParse];
+    [parseH pushLocationLatitude:_mapData.latitude longitude:_mapData.longitude title:@"String title" currAddress:@"Something"];
+    
     NSLog(@"Latitude: %f",[self.mapView userLocation].location.coordinate.latitude);
     NSLog(@"Longitude: %f",[self.mapView userLocation].location.coordinate.longitude);
     
