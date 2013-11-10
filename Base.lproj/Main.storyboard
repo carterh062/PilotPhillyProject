@@ -8,6 +8,7 @@
         <scene sceneID="Tog-vI-ddS">
             <objects>
                 <navigationController definesPresentationContext="YES" id="fxa-0I-irf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3VG-rf-lHE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="43H-HY-bBa">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -31,7 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C22-6X-ekh">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C22-6X-ekh">
                                 <rect key="frame" x="0.0" y="412" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -44,7 +45,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="buttonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gGd-6k-vEX"/>
+                                                <action selector="recentLocationsButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y6A-ah-Gtg"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -56,6 +57,9 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
+                                        <connections>
+                                            <action selector="addLocationButtonClicked:" destination="vXZ-lx-hvc" id="kxy-y2-S7Y"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -65,10 +69,14 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C22-6X-ekh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IQ4-6p-3dn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4qv-Cr-lZu"/>
                     <connections>
                         <outlet property="mapView" destination="Pru-96-gL8" id="UKU-ga-lb0"/>
+                        <segue destination="ay0-AJ-yI4" kind="push" id="xRn-nC-RZm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -98,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="325" y="-186"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="RuW-04-ROR">
             <objects>
-                <viewController id="ay0-AJ-yI4" sceneMemberID="viewController">
+                <viewController id="ay0-AJ-yI4" customClass="InfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oEL-fR-L3B"/>
                         <viewControllerLayoutGuide type="bottom" id="g49-Yb-BI5"/>

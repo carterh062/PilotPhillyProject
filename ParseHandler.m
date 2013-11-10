@@ -35,6 +35,6 @@
     [placeObject setObject:title forKey:@"title"];
     [placeObject setObject:currAddress forKey:@"Address"];
     [placeObject saveInBackground];
-    NSLog(@"latitude" )
+    NSLog(@"latitude" );
 }
 @end

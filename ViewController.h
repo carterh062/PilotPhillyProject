@@ -13,6 +13,7 @@
 @interface ViewController : UIViewController
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
-- (IBAction)buttonClicked:(id)sender;
+- (IBAction)recentLocationsButtonClicked:(id)sender;
+- (IBAction)addLocationButtonClicked:(id)sender;
 
 @end

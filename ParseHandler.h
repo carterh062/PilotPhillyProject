@@ -17,7 +17,7 @@
 -(void)startParse;
 -(void)testPushObj:(NSString*)obj
                key:(NSString *)key;
--(void)pushLocationLatitude:(double)latitude longitude:(double)longitude title:(NSString*)title currAddress:(NSSTring*)currAddress;
+-(void)pushLocationLatitude:(double)latitude longitude:(double)longitude title:(NSString*)title currAddress:(NSString*)currAddress;
 
 
 @end
