@@ -7,7 +7,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Tog-vI-ddS">
             <objects>
-                <navigationController definesPresentationContext="YES" id="fxa-0I-irf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OrigVC" definesPresentationContext="YES" id="fxa-0I-irf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3VG-rf-lHE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="43H-HY-bBa">
                         <autoresizingMask key="autoresizingMask"/>
@@ -95,9 +95,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <scrollView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="wXp-DG-rBQ">
+                            <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </scrollView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="tQQ-GG-US5">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tQQ-GG-US5" id="iVM-qk-bet">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -130,7 +134,7 @@
         <!--Info View Controller-->
         <scene sceneID="RuW-04-ROR">
             <objects>
-                <viewController id="ay0-AJ-yI4" customClass="InfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoVC" id="ay0-AJ-yI4" customClass="InfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oEL-fR-L3B"/>
                         <viewControllerLayoutGuide type="bottom" id="g49-Yb-BI5"/>
@@ -182,6 +186,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveButtonClicked:" destination="ay0-AJ-yI4" eventType="touchUpInside" id="TJv-V3-M5e"/>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="9Tg-3a-woo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,4 +243,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Tg-3a-woo"/>
+    </inferredMetricsTieBreakers>
 </document>
