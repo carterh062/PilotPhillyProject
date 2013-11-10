@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationListViewController : UITableViewController
-
+@property (nonatomic, strong) NSMutableArray *locationList;
 @end
