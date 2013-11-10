@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationListViewController : UITableViewController
+@interface LocationListViewController : UITableViewController<UITableViewDelegate , UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *locationList;
 @end

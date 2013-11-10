@@ -29,12 +29,38 @@
     [testObject save];
 }
 -(void)pushLocationLatitude:(double)latitude longitude:(double)longitude title:(NSString*)title currAddress:(NSString *)currAddress{
+    latitude = _lat;
+    longitude = _longi;
     PFGeoPoint *coordObject = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
     PFObject *placeObject = [PFObject objectWithClassName:@"PlaceObject"];
     [placeObject setObject:coordObject forKey:@"location"];
     [placeObject setObject:title forKey:@"title"];
-    [placeObject setObject:currAddress forKey:@"Address"];
+    [placeObject setObject:currAddress forKey:@"address"];
     [placeObject saveInBackground];
-    NSLog(@"latitude" );
+    
+}
+-(NSMutableArray*) returnLocations:(void (^)(void))completionBlock{
+    NSMutableArray *titlesArray = [[NSMutableArray alloc]init];
+    PFQuery *query = [PFQuery queryWithClassName:@"PlaceObject"];       // Get:     Class name from Parse.com
+    [query orderByDescending:@"createdAt"];                                 // Order:   By most recent
+    __block int counter = 0;
+    self.done = NO;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *titles, NSError *error)
+     {
+         for (PFObject *title in titles)
+         {
+             // Event
+             NSString *post = [title objectForKey:@"title"];               // Get:     From Column "event"
+             if (post == nil) { post = @" "; }                 // Save:    Empty string if no data in current tablerow
+             [titlesArray insertObject:post atIndex:counter];                 // Save:    DB-data to array
+             NSLog(@"Parsed Array");
+             counter++;
+         }
+         self.done = YES;
+        NSLog(@"Array: %@",titlesArray);
+         completionBlock();
+     }];
+    
+    return titlesArray;
 }
 @end
