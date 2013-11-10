@@ -28,7 +28,13 @@
     [testObject setObject:obj forKey:key];
     [testObject save];
 }
--(void)pushLocationX:(int)xVal Y:(int)yVal Z:(int)zVal{
-    
+-(void)pushLocationLatitude:(double)latitude longitude:(double)longitude title:(NSString*)title currAddress:(NSString *)currAddress{
+    PFGeoPoint *coordObject = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
+    PFObject *placeObject = [PFObject objectWithClassName:@"PlaceObject"];
+    [placeObject setObject:coordObject forKey:@"location"];
+    [placeObject setObject:title forKey:@"title"];
+    [placeObject setObject:currAddress forKey:@"Address"];
+    [placeObject saveInBackground];
+    NSLog(@"latitude" )
 }
 @end
